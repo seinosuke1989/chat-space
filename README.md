@@ -32,15 +32,17 @@ Things you may want to cover:
 ### Association
 - has_many :groups, through: :users_group
 - has_many :comments
+- has_many : users_groups
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|text|null: false|
+|name|text|null: false|
 |menber|text|null: false|
 ### Association
 - has_many :users, through: :users_group
 - has_many :comments
+- has_many :users_groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
