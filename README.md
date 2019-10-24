@@ -30,7 +30,7 @@ Things you may want to cover:
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many :users_groups
+- has_many :groups, through: :users_group
 - has_many :comments
 
 ## groupsテーブル
@@ -39,7 +39,7 @@ Things you may want to cover:
 |groupname|text|null: false|
 |menber|text|null: false|
 ### Association
-- has_many :users_groups
+- has_many :users, through: :users_group
 - has_many :comments
 
 ## users_groupsテーブル
