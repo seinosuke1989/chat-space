@@ -1,1 +1,23 @@
-.body
+%body
+  .wrapper
+    .chat-side
+      .side-header
+        .side-header__box
+          %p.side-header__box__user-name ゆゆゆ
+      .groups
+        %a{:href => "groups/3316/messages"}
+        .group
+          %p.group_group-name
+          テックエキスパート
+          %p.group_latest-message
+          まだメッセージがありません
+    .chat-main
+      .main-header
+        .main-header__left-box
+          %h2.main-header__left-box__current-group{"data-group_id" => "3316"}
+            プログラミング
+          %ul.main-header__left-box__member-list
+            Member：
+          %li.main-header__left-box__member-list__member 
+      .messages      
+      .form
