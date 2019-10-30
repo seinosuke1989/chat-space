@@ -1,26 +1,6 @@
 %body
   .wrapper
-    .chat-side
-      .side-header
-        .side-header__box
-          %p.side-header__box__user-name 
-            = current_user.name
-          %ul.side-header__box__menu
-            %li.side-header__box__menu__new-group
-              = link_to '#' do
-                %i.fa.fa-edit
-            %li.side-header__box__menu__edit-user
-              = link_to edit_user_path(current_user) do
-                %i.fa.fa-cog
-      .groups
-        = link_to '#' do
-          .group
-            %p.group__group-name あああああ
-            %p.group__latest-message ああああああ
-        = link_to '#' do
-          .group
-            %p.group__group-name gtgtgt
-            %p.group__latest-message まだメッセージがありません
+    = render 'devise/shared/side_bar'
     .chat-main
       .main-header
         .main-header__left-box
