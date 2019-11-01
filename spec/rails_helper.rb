@@ -34,6 +34,9 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
+  Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include ControllerMacros, type: :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -61,4 +64,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  require 'capybara/rspec'
 end
