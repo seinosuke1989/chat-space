@@ -17,3 +17,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 end
+
+def index
+  respond_to do |format|
+    format.html
+    format.json
+  end
+end
