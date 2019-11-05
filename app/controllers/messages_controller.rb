@@ -16,6 +16,7 @@ class MessagesController < ApplicationController
       render :index
     end
   end
+  
 
   private
 
