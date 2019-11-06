@@ -1,7 +1,6 @@
 $(function(){
 
   function buildhtml(message){
-    console.log(message)
     var addImage = message.image.url ? `<img class = "lower-message__image", src=${message.image.url}>` : "";
     var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
@@ -65,7 +64,7 @@ $(function(){
       })
     })
     .fail(function() {
-      console.log('error');
+      alert("自動更新に失敗しました")
     })
   };
   setInterval(reloadMessages, 5000);
