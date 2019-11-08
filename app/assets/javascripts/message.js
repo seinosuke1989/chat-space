@@ -26,7 +26,7 @@ $(function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action');
+    var url = $(this).attr('action')
     $.ajax({
       url: url,
       type: "POST",
@@ -40,11 +40,13 @@ $(function(){
       $('.messages').append(html);
       $('.new_message')[0].reset();
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('.form__submit').prop('disabled', false);
     })
     .fail(function(){
       alert('エラー');
-    });
+    })
+    .always(function(){
+      $('.form__submit').prop('disabled', false);
+    })
   });
   var reloadMessages = function() {
     last_message_id = $('.message').last().data('id');
